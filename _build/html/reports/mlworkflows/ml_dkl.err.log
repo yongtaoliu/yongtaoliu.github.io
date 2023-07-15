@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\nbclient\client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\nbclient\util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\nbclient\util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "C:\Users\yla\AppData\Local\anaconda3\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\nbclient\client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import os
+import win32com.client
+import numpy as np
+import time
+import h5py
+import sidpy
+import pyNSID
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+
+import numpy as np
+from scipy.signal import find_peaks
+import h5py
+from mlsocket import MLSocket
+
+# import acquition.py
+from Acquisition_v0_5 import Acquisition   # include the Acquistion_v0.py in the same directory
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [1;32mIn[1], line 14[0m
+[0;32m     12[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01msignal[39;00m [38;5;28;01mimport[39;00m find_peaks
+[0;32m     13[0m [38;5;28;01mimport[39;00m [38;5;21;01mh5py[39;00m
+[1;32m---> 14[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmlsocket[39;00m [38;5;28;01mimport[39;00m MLSocket
+[0;32m     16[0m [38;5;66;03m# import acquition.py[39;00m
+[0;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mAcquisition_v0_5[39;00m [38;5;28;01mimport[39;00m Acquisition
+
+[1;31mModuleNotFoundError[0m: No module named 'mlsocket'
+ModuleNotFoundError: No module named 'mlsocket'
+
