@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python_guide/introduction_notebook';</script>
+    <link rel="canonical" href="https://github.com/python_guide/introduction_notebook.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="High Throughput Experimentation" href="../ht_workflows/ht.html" />
@@ -551,37 +552,13 @@ line scan start and end positions:  (-0.5, 0.0, 0.5, 0.0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/05b542fa4dd6ee6d96431c74a346249f19771a657bae189a56632e65d7055249.png" src="../_images/05b542fa4dd6ee6d96431c74a346249f19771a657bae189a56632e65d7055249.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [progress: 0:00:25] |***********************               | (ETA:   0:00:15) 
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Do a 64*64 raster scan</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">dset_pfm</span><span class="p">,</span> <span class="n">dset_chns</span><span class="p">,</span> <span class="n">dset_cs</span> <span class="o">=</span> <span class="n">newexp</span><span class="o">.</span><span class="n">raster_scan</span><span class="p">(</span><span class="n">raster_parms_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;scan_pixel&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;scan_x_start&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                                                                        <span class="s2">&quot;scan_y_start&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">,</span><span class="s2">&quot;scan_x_stop&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                                                                        <span class="s2">&quot;scan_y_stop&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">},</span> <span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~\Aecroscopy_local\python_guide\Acquisition_v0_9.py:668,</span> in <span class="ni">Acquisition.raster_scan</span><span class="nt">(self, file_name, raster_parms_dict, feedbackon, progress_on, ploton)</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="n">bar_progress</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">progress_bar</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">raster_parms_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>  
-<span class="g g-Whitespace">    </span><span class="mi">666</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">raster_parms_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])):</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="c1"># Move tip to strat pos</span>
-<span class="ne">--&gt; </span><span class="mi">668</span>     <span class="bp">self</span><span class="o">.</span><span class="n">tip_control</span><span class="p">(</span><span class="n">tip_parms_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;next_x_pos_00&quot;</span><span class="p">:</span> <span class="n">raster_parms_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> 
-<span class="g g-Whitespace">    </span><span class="mi">669</span>                                        <span class="s2">&quot;next_y_pos_01&quot;</span><span class="p">:</span> <span class="n">scan_line_array</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> 
-<span class="g g-Whitespace">    </span><span class="mi">670</span>                                        <span class="s2">&quot;transit_time_s_02&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">do_set_setpoint</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">feedbackon</span> <span class="o">=</span> <span class="n">feedbackon</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">671</span>     <span class="c1"># Wait until tip move is done</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span>     <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">VI</span><span class="o">.</span><span class="n">getcontrolvalue</span><span class="p">(</span><span class="s1">&#39;move_tip_control_cluster&#39;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]:</span>
-
-<span class="nn">File ~\Aecroscopy_local\python_guide\Acquisition_v0_9.py:300,</span> in <span class="ni">Acquisition.tip_control</span><span class="nt">(self, tip_parms_dict, do_move_tip, do_set_setpoint, feedbackon)</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span> <span class="c1"># wait until tip move is done</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">VI</span><span class="o">.</span><span class="n">getcontrolvalue</span><span class="p">(</span><span class="s1">&#39;move_tip_control_cluster&#39;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]:</span>
-<span class="ne">--&gt; </span><span class="mi">300</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Wait 0.1 s and check if action is done again</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="c1"># Print feedback on setpoint and tip parameters if feedbackon is True</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">feedbackon</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="c1"># return setpoint</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<img alt="../_images/0734bf6626009374ad4f539e857bc50b47fe476c2dbf2d850fc4494e845c141d.png" src="../_images/0734bf6626009374ad4f539e857bc50b47fe476c2dbf2d850fc4494e845c141d.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [progress: 0:00:38] |************************************  | (ETA:   0:00:01) C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\pyNSID\io\hdf_utils.py:376: FutureWarning: validate_h5_dimension may be removed in a future version
+  warn(&#39;validate_h5_dimension may be removed in a future version&#39;,
+C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\pyNSID\io\hdf_utils.py:376: FutureWarning: validate_h5_dimension may be removed in a future version
+  warn(&#39;validate_h5_dimension may be removed in a future version&#39;,
+C:\Users\yla\AppData\Local\anaconda3\lib\site-packages\pyNSID\io\hdf_utils.py:376: FutureWarning: validate_h5_dimension may be removed in a future version
+  warn(&#39;validate_h5_dimension may be removed in a future version&#39;,
 </pre></div>
 </div>
 </div>
